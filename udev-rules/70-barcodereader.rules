@@ -1,0 +1,11 @@
+# low level usb barcode reader triggers
+# Smartmatic - Baikal 
+# USB barcode add trigger
+
+ACTION=="add", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0001", GROUP="sudo", RUN+="/sbin/modprobe usbserial vendor=0x1eab product=0x0001"
+ACTION=="add", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0002", GROUP="sudo", RUN+="/sbin/modprobe usbserial vendor=0x1eab product=0x0002"
+ACTION=="add", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0102", GROUP="sudo", RUN+="/sbin/modprobe usbserial vendor=0x1eab product=0x0102"
+
+ACTION=="remove", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0001", GROUP="sudo", RUN+="/sbin/modprobe -r usbserial"
+ACTION=="remove", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0002", GROUP="sudo", RUN+="/sbin/modprobe -r usbserial"
+ACTION=="remove", ATTRS{idVendor}=="1eab", ATTRS{idProduct}=="0102", GROUP="sudo", RUN+="/sbin/modprobe -r usbserial"
